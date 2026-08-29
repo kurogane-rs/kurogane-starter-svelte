@@ -1,0 +1,4 @@
+[app]
+name = "{{project-name}}"
+frontend = "{{frontend_dist}}"
+frontend-build = "npm run build"

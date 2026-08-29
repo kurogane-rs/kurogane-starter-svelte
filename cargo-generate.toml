@@ -1,0 +1,24 @@
+[placeholders.language]
+type = "string"
+prompt = "Language"
+default = "typescript"
+choices = ["typescript", "javascript"]
+
+[placeholders.dev_url]
+type = "string"
+prompt = "Development server URL"
+default = "http://localhost:5173"
+
+[placeholders.frontend_dist]
+type = "string"
+prompt = "Frontend build output directory"
+default = "frontend/dist"
+
+[hooks]
+pre = ["hooks/pre-hook.rhai"]
+
+[conditional.'language == "typescript"']
+ignore = ["frontend-js", "pkg-js"]
+
+[conditional.'language == "javascript"']
+ignore = ["frontend-ts", "pkg-ts"]

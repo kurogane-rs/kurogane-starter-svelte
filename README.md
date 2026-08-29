@@ -1,0 +1,49 @@
+# Kurogane: Svelte starter
+
+A Svelte 5 project scaffolded with Vite for Kurogane.
+
+## Supported Languages
+
+- `typescript`: Svelte with TypeScript (`<script lang="ts">`), type checking via `svelte-check`
+- `javascript`: Svelte with plain JavaScript, no type checking
+
+## Usage with Kurogane CLI
+
+```sh
+kurogane new svelte
+```
+
+Select a language when prompted.
+
+## Non-interactive usage
+
+```sh
+cargo generate kurogane-rs/starter-svelte --name my-app --define language=typescript
+```
+
+## What's included
+
+- Svelte 5 entry point
+- Vite with `@sveltejs/vite-plugin-svelte`
+- `vite.config.ts` configured to build into `content/`
+- Rust binary using the Kurogane runtime
+- `kurogane.toml` packaging configuration
+
+## Development
+
+```sh
+npm install
+npm run dev    # Start Vite dev server (port 5173)
+kurogane dev   # Launch the Kurogane desktop app
+```
+
+## Building
+
+```sh
+npm run build     # Build frontend (includes svelte-check for TypeScript)
+kurogane build    # Build the Rust binary
+```
+
+## TypeScript vs JavaScript
+
+The TypeScript variant includes `tsconfig.json`, `svelte-shim.d.ts` and uses `<script lang="ts">` in Svelte components. The `build` script runs `svelte-check` before Vite. The JavaScript variant uses plain `<script>` blocks with no type checking.
