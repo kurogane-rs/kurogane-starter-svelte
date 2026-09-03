@@ -7,5 +7,5 @@ fn main() {
     App::url("{{dev_url}}").run_or_exit();
 
     #[cfg(not(debug_assertions))]
-    App::new("{{frontend_dist}}").run_or_exit();
+    App::new("content").run_or_exit();
 }

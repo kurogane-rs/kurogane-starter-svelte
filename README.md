@@ -25,23 +25,23 @@ cargo generate kurogane-rs/starter-svelte --name my-app --define language=typesc
 
 - Svelte 5 entry point
 - Vite with `@sveltejs/vite-plugin-svelte`
-- `vite.config.ts` configured to build into `content/`
+- `vite.config.ts` configured to build into `frontend/dist`
 - Rust binary using the Kurogane runtime
 - `kurogane.toml` packaging configuration
 
 ## Development
 
 ```sh
-npm install
-npm run dev    # Start Vite dev server (port 5173)
-kurogane dev   # Launch the Kurogane desktop app
+npm --prefix frontend install
+npm --prefix frontend run dev  # Start Vite dev server (port 5173)
+kurogane dev                   # Launch the Kurogane desktop app
 ```
 
-## Building
+## Bundling
 
 ```sh
-npm run build     # Build frontend (includes svelte-check for TypeScript)
-kurogane build    # Build the Rust binary
+npm --prefix frontend run build  # Build frontend (includes svelte-check for TypeScript)
+kurogane bundle
 ```
 
 ## TypeScript vs JavaScript
