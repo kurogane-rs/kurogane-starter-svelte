@@ -4,7 +4,7 @@ use kurogane::App;
 
 fn main() {
     #[cfg(debug_assertions)]
-    App::url("{{dev_url}}").run_or_exit();
+    App::url("http://localhost:5173").run_or_exit();
 
     #[cfg(not(debug_assertions))]
     App::new("content").run_or_exit();
