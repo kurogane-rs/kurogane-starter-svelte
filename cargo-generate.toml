@@ -4,36 +4,8 @@ prompt = "Language"
 default = "typescript"
 choices = ["typescript", "javascript"]
 
-[placeholders.dev_url]
-type = "string"
-prompt = "Development server URL"
-default = "http://localhost:5173"
-
-[placeholders.frontend]
-type = "string"
-prompt = "Frontend source directory"
-default = "frontend"
-
-[placeholders.frontend_dist]
-type = "string"
-prompt = "Frontend build output directory"
-default = "frontend/dist"
-
-[placeholders.frontend_install]
-type = "string"
-prompt = "Command to install frontend dependencies"
-default = "npm --prefix frontend install"
-
-[placeholders.frontend_run]
-type = "string"
-prompt = "Command to run the frontend dev server"
-default = "npm --prefix frontend run dev"
-
-[hooks]
-pre = ["hooks/pre-hook.rhai"]
-
 [conditional.'language == "typescript"']
-ignore = ["frontend-js"]
+ignore = ["frontend/src/main.js"]
 
 [conditional.'language == "javascript"']
-ignore = ["frontend-ts"]
+ignore = ["frontend/src/main.ts", "frontend/src/svelte-shim.d.ts", "frontend/src/vite-env.d.ts", "frontend/tsconfig.json"]

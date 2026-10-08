@@ -1,7 +1,7 @@
 [app]
 name = "{{project-name}}"
-frontend = "{{frontend}}"
-frontend-dist = "{{frontend_dist}}"
-frontend-install = "{{frontend_install}}"
-frontend-run = "{{frontend_run}}"
+frontend = "frontend"
+frontend-dist = "frontend/dist"
+frontend-install = "npm --prefix frontend install"
+frontend-run = "npm --prefix frontend run dev"
 frontend-build = "npm --prefix frontend run build"

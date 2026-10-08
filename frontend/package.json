@@ -4,12 +4,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "{% if language == "typescript" %}svelte-check && {% endif %}vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^5",
     "svelte": "^5",
-    "vite": "^6"
+{% if language == "typescript" %}    "svelte-check": "^4",
+    "typescript": "^5",
+{% endif %}    "vite": "^6"
   }
 }
