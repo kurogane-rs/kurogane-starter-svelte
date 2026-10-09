@@ -26,6 +26,7 @@ cargo generate kurogane-rs/kurogane-starter-svelte --name my-app --define langua
 - Svelte 5 entry point
 - Vite with `@sveltejs/vite-plugin-svelte`
 - `vite.config.ts` configured to build into `frontend/dist`
+- `svelte.config.js` with Vite's preprocessor which `svelte-check` reads
 - Rust binary using the Kurogane runtime
 - `kurogane.toml` packaging configuration
 
